@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+/* eslint react-hooks/exhaustive-deps: off */
+import React, {useEffect, useState} from "react";
 import ColorfulMessage from "./components/ColorfulMessage.jsx";
 
 const App = () => {
@@ -15,11 +16,14 @@ const App = () => {
     setShowFlag(!showFlag);
   }
 
-  if (num % 3 === 0) {
-    showFlag || setShowFlag(true); // ここで再レンダリングの無限ループが生じている
-  } else {
-    showFlag && setShowFlag(false);
-  }
+  useEffect(() => {
+    if (num % 3 === 0) {
+      showFlag || setShowFlag(true); // ここで再レンダリングの無限ループが生じている
+    } else {
+      showFlag && setShowFlag(false);
+    }
+    // eslint disable-next-lint react-hooks/exhaustive-deps
+  }, [num]);
 
   return (
     <>
