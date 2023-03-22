@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import ColorfulMessage from "./components/ColorfulMessage.jsx";
 
 const App = () => {
   const onClickButton = () => alert();
+  const [num, setNum] = useState(0); // useStateの中は初期値
+  // stateとして使用する変数名、2つ目はそのstateを変更するための関数名
 
   return (
     <>
@@ -14,6 +16,7 @@ const App = () => {
         元気です
       </ColorfulMessage>
       <button onClick={onClickButton}>ボタン</button>
+      <p>{num}</p>
     </>
   )
 }
