@@ -8,6 +8,12 @@ const App = () => {
   const [num, setNum] = useState(0); // useStateの中は初期値
   // stateとして使用する変数名、2つ目はそのstateを変更するための関数名
 
+  const [showFlag, setShowFlag] = useState(true);
+
+  const onClickSwitchShowFlag = () => {
+    setShowFlag(!showFlag);
+  }
+
   return (
     <>
       <h1 style={{ color: 'red' }}>こんにちは！</h1>
@@ -18,7 +24,10 @@ const App = () => {
         元気です
       </ColorfulMessage>
       <button onClick={onClickCountUp}>カウントアップ</button>
+      <br />
+      <button onClick={onClickSwitchShowFlag}>on/off</button>
       <p>{num}</p>
+      {showFlag && <p>aaaa</p>}
     </>
   )
 }
