@@ -15,6 +15,12 @@ const App = () => {
     setShowFlag(!showFlag);
   }
 
+  if (num % 3 === 0) {
+    setShowFlag(true); // ここで再レンダリングの無限ループが生じている
+  } else {
+    setShowFlag(false);
+  }
+
   return (
     <>
       <h1 style={{ color: 'red' }}>こんにちは！</h1>
