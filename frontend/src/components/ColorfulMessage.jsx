@@ -7,7 +7,7 @@ const ColorfulMessage = (props) => {
   }
 
   return (
-    <p style={contentType}>{props.message}</p>
+    <p style={contentType}>{props.children}</p>
   );
 }
 
