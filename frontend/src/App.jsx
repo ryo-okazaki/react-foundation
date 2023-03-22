@@ -11,6 +11,10 @@ const App = () => {
         color="blue"
         message="お元気ですか"
       />
+      <ColorfulMessage
+        color="pink"
+        message="元気です"
+      />
       <button onClick={onClickButton}>ボタン</button>
     </>
   )
