@@ -16,9 +16,9 @@ const App = () => {
   }
 
   if (num % 3 === 0) {
-    setShowFlag(true); // ここで再レンダリングの無限ループが生じている
+    showFlag || setShowFlag(true); // ここで再レンダリングの無限ループが生じている
   } else {
-    setShowFlag(false);
+    showFlag && setShowFlag(false);
   }
 
   return (
