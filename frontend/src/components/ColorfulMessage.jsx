@@ -1,13 +1,18 @@
 import React from "react";
 
 const ColorfulMessage = (props) => {
+  const {
+    color,
+    children
+  } = props
+
   const contentType = {
-    color: props.color,
+    color, // プロパティ名と値が同じ場合は省略できる
     fontSize: '18px',
   }
 
   return (
-    <p style={contentType}>{props.children}</p>
+    <p style={contentType}>{children}</p>
   );
 }
 
