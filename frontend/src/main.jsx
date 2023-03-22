@@ -1,10 +1,12 @@
-import React from 'react';
-import ReactDom from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
 const App = () => {
-  return null;
+  return <h1>こんにちは！</h1>;
 };
 
-ReactDom.createRoot(document.getElementById('root')).render(
-  <App />,
-);
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
